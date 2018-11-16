@@ -7,45 +7,107 @@
             "label": "build release clean",
             "type": "shell",
             "command": "mbed",
-            "args": ["compile", "--profile", "release", "-c", "-N", "firmware", 
-                     "--source", "./../mbed-os", "--source", ".", "--build", ".\\BUILD\\CORE2-RELEASE"],
+            "windows": {
+                "args": [
+                    "compile",
+                    "--profile",
+                    "release",
+                    "-c",
+                    "-N",
+                    "firmware",
+                    "--source",
+                    "./../mbed-os",
+                    "--source",
+                    ".",
+                    "--build",
+                    ".\\BUILD\\CORE2-RELEASE"
+                ]
+            },
+            "linux": {
+                "args": [
+                    "compile",
+                    "--profile",
+                    "release",
+                    "-c",
+                    "-N",
+                    "firmware",
+                    "--source",
+                    "./../mbed-os",
+                    "--source",
+                    ".",
+                    "--build",
+                    "./BUILD/CORE2-RELEASE"
+                ]
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "problemMatcher": {
                 "owner": "cpp",
-                "fileLocation": ["relative", "${workspaceFolder}"],
-                "pattern": 
-                    {
-                        "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                        "file": 2,
-                        "line": 3,
-                        "column": 4,
-                        "severity": 5,
-                        "message": 6
-                    }            
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 2,
+                    "line": 3,
+                    "column": 4,
+                    "severity": 5,
+                    "message": 6
+                }
             }
         },
         {
             "label": "build release",
             "type": "shell",
             "command": "mbed",
-            "args": ["compile", "--profile", "release", "-N", "firmware",  
-                "--source", "./../mbed-os", "--source", ".", "--build", ".\\BUILD\\CORE2-RELEASE"],
+            "windows": {
+                "args": [
+                    "compile",
+                    "--profile",
+                    "release",
+                    "-N",
+                    "firmware",
+                    "--source",
+                    "./../mbed-os",
+                    "--source",
+                    ".",
+                    "--build",
+                    ".\\BUILD\\CORE2-RELEASE"
+                ]
+            },
+            "linux": {
+                "args": [
+                    "compile",
+                    "--profile",
+                    "release",
+                    "-N",
+                    "firmware",
+                    "--source",
+                    "./../mbed-os",
+                    "--source",
+                    ".",
+                    "--build",
+                    "./BUILD/CORE2-RELEASE"
+                ]
+            },
             "group": "build",
             "problemMatcher": {
                 "owner": "cpp",
-                "fileLocation": ["relative", "${workspaceFolder}"],
-                "pattern": 
-                    {
-                        "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                        "file": 2,
-                        "line": 3,
-                        "column": 4,
-                        "severity": 5,
-                        "message": 6
-                    }            
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 2,
+                    "line": 3,
+                    "column": 4,
+                    "severity": 5,
+                    "message": 6
+                }
             }
         },
         {
@@ -62,8 +124,9 @@
                     "-Rst"
                 ]
             },
-            "osx": {
-                
+            "osx": {},
+            "linux": {
+                "command": "st-flash write ./BUILD/CORE2-RELEASE/firmware.bin 0x8000000",
             }
         }
     ]
