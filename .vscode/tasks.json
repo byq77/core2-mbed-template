@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build release clean",
+            "label": "CLEAN BUILD (RELEASE)",
             "type": "shell",
             "command": "mbed",
             "windows": {
@@ -16,11 +16,12 @@
                     "-N",
                     "firmware",
                     "--source",
-                    "./../mbed-os",
+                    ".\\..\\mbed-os",
                     "--source",
                     ".",
                     "--build",
-                    ".\\BUILD\\CORE2-RELEASE"
+                    ".\\BUILD\\CORE2-RELEASE",
+                    "--color"
                 ]
             },
             "linux": {
@@ -60,7 +61,7 @@
             }
         },
         {
-            "label": "build release",
+            "label": "BUILD (RELEASE)",
             "type": "shell",
             "command": "mbed",
             "windows": {
@@ -71,11 +72,12 @@
                     "-N",
                     "firmware",
                     "--source",
-                    "./../mbed-os",
+                    ".\\..\\mbed-os",
                     "--source",
                     ".",
                     "--build",
-                    ".\\BUILD\\CORE2-RELEASE"
+                    ".\\BUILD\\CORE2-RELEASE",
+                    "--color"
                 ]
             },
             "linux": {
@@ -90,7 +92,8 @@
                     "--source",
                     ".",
                     "--build",
-                    "./BUILD/CORE2-RELEASE"
+                    "./BUILD/CORE2-RELEASE",
+                    "--color"
                 ]
             },
             "group": "build",

@@ -1,0 +1,15 @@
+{
+    "config": {
+
+    },
+    "macros" : [
+        
+    ],
+    "target_overrides" : {
+        "CORE2": {
+            "events.shared-dispatch-from-application": 1,
+            "platform.default-serial-baud-rate": 115200,
+            "platform.stdio-baud-rate": 115200
+        }
+    }
+}
