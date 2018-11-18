@@ -6,7 +6,7 @@ You need following tools:
 * [Visual Studio Code IDE](https://code.visualstudio.com/)
 * [GNU Arm Embedded version 6 toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads)
 * [STM32 ST-LINK Utility](https://www.st.com/en/development-tools/stsw-link004.html) (Windows only)
-## `mbed-cli` installation
+## mbed-cli installation
 In-depth tutorial on `mbed-cli` tool installation can be found [here](https://os.mbed.com/docs/v5.10/tools/installation-and-setup.html). 
 
 > **Important!**
@@ -51,8 +51,8 @@ $ mbed config -G MBED_OS_DIR "E:\mbed_projects\core2-mbed-workspace\mbed-os"
 
 Open Visual Studio Code, press `CTRL + SHIFT + P` and type `Git: Clone` in Command Pallet. Copy and paste `https://github.com/byq77/core2-mbed-template.git` URL.
 
-<img style="display: block; margin-left: auto; margin-right: auto;" src="https://user-images.githubusercontent.com/28567623/48676115-53336680-eb62-11e8-9059-4aeb8d8096b6.png" />
-
+<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676115-53336680-eb62-11e8-9059-4aeb8d8096b6.png" />
+</p>
 You will be prompted to select your repo location. Choose `core2-mbed-workspace` folder. Open your repo in vs code.
 
 ### Project configuration
@@ -61,11 +61,43 @@ Last step will be to configure your `c_cpp_project.json` file.
 
 Find `MbedOsPath` variable and change its value with path to your local `mbed-os`: 
 
-<div><center><img src="https://user-images.githubusercontent.com/28567623/48676206-d30e0080-eb63-11e8-9030-4f339a5eb634.png" /></center></div>
+<align="center"><img src="https://user-images.githubusercontent.com/28567623/48676206-d30e0080-eb63-11e8-9030-4f339a5eb634.png" /></p>
 
 If you are a Windows user find variable `compilerPath` and replace its value with path to `arm-none-eabi-gcc.exe` on your system:
 
-<div><center><img src="https://user-images.githubusercontent.com/28567623/48676215-f89b0a00-eb63-11e8-9fb3-be5cf287dd75.png"></center></div>
+<align="center"><img src="https://user-images.githubusercontent.com/28567623/48676215-f89b0a00-eb63-11e8-9fb3-be5cf287dd75.png"></center></p>
+
+### Adding .mbedignore
+https://os.mbed.com/docs/v5.10/tools/ignoring-files-from-mbed-build.html
+
+To speed-up building your projects you can exclude certain folders of `mbed-os` library from compilation. In your local `mbed-os` library root folder create new file `.mbedignore`. Open it and add following lines:
+
+```
+features/cellular/*
+features/cryptocell/*
+features/deprecated_warnings/*
+features/device_key/*
+features/FEATURE_BOOTLOADER/*
+features/lorawan/*
+features/lwipstack/*
+features/nanostack/*
+features/netsocket/*
+features/nfc/*
+features/unsupported/*
+components/wifi/*
+components/802.15.4_RF/*
+components/storage/*
+```
+
+### Compilation tasks
+
+To build and flash your firmware press `CTRL + SHIFT + P` and type `Tasks: Run Task` in Command Pallete. Select task of your choice. 
+
+<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676405-cfc84400-eb66-11e8-9120-88a57175c9f7.png" /></p>
+
+You can add new tasks and customize existing ones by editing `task.json` file. 
+
+<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676429-33eb0800-eb67-11e8-9409-4820eaec1691.png" /></p>
 
 
 ## mbed development
