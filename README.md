@@ -51,7 +51,7 @@ $ mbed config -G MBED_OS_DIR "E:\mbed_projects\core2-mbed-workspace\mbed-os"
 
 Open Visual Studio Code, press `CTRL + SHIFT + P` and type `Git: Clone` in Command Pallet. Copy and paste `https://github.com/byq77/core2-mbed-template.git` URL.
 
-![img1](./1542561492775.png)
+<img style="display: block; margin-left: auto; margin-right: auto;" src="https://user-images.githubusercontent.com/28567623/48676115-53336680-eb62-11e8-9059-4aeb8d8096b6.png" />
 
 You will be prompted to select your repo location. Choose `core2-mbed-workspace` folder. Open your repo in vs code.
 
@@ -61,11 +61,11 @@ Last step will be to configure your `c_cpp_project.json` file.
 
 Find `MbedOsPath` variable and change its value with path to your local `mbed-os`: 
 
-![img2](./1542562152885.png)
+<div><center><img src="https://user-images.githubusercontent.com/28567623/48676206-d30e0080-eb63-11e8-9030-4f339a5eb634.png" /></center></div>
 
 If you are a Windows user find variable `compilerPath` and replace its value with path to `arm-none-eabi-gcc.exe` on your system:
 
-![img3](./1542562370606.png)
+<div><center><img src="https://user-images.githubusercontent.com/28567623/48676215-f89b0a00-eb63-11e8-9fb3-be5cf287dd75.png"></center></div>
 
 
 ## mbed development
