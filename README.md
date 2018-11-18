@@ -47,12 +47,12 @@ $ mbed config -G MBED_OS_DIR "E:\mbed_projects\core2-mbed-workspace\mbed-os"
 [mbed] E:\mbed_projects\core2-mbed-workspace\mbed-os now set as global MBED_OS_DIR
 ```
 
-### Importing this template project
+### Importing template project
 
 Open Visual Studio Code, press `CTRL + SHIFT + P` and type `Git: Clone` in Command Pallet. Copy and paste `https://github.com/byq77/core2-mbed-template.git` URL.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676115-53336680-eb62-11e8-9059-4aeb8d8096b6.png" />
-</p>
+<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676115-53336680-eb62-11e8-9059-4aeb8d8096b6.png" /></p>
+
 You will be prompted to select your repo location. Choose `core2-mbed-workspace` folder. Open your repo in vs code.
 
 ### Project configuration
@@ -61,11 +61,11 @@ Last step will be to configure your `c_cpp_project.json` file.
 
 Find `MbedOsPath` variable and change its value with path to your local `mbed-os`: 
 
-<align="center"><img src="https://user-images.githubusercontent.com/28567623/48676206-d30e0080-eb63-11e8-9030-4f339a5eb634.png" /></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676206-d30e0080-eb63-11e8-9030-4f339a5eb634.png" /></p>
 
 If you are a Windows user find variable `compilerPath` and replace its value with path to `arm-none-eabi-gcc.exe` on your system:
 
-<align="center"><img src="https://user-images.githubusercontent.com/28567623/48676215-f89b0a00-eb63-11e8-9fb3-be5cf287dd75.png"></center></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676215-f89b0a00-eb63-11e8-9fb3-be5cf287dd75.png"></center></p>
 
 ### Adding .mbedignore
 https://os.mbed.com/docs/v5.10/tools/ignoring-files-from-mbed-build.html
