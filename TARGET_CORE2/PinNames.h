@@ -349,6 +349,36 @@ typedef enum {
     SYS_TRACED3 = PE_6,
     SYS_WKUP = PA_0,
 
+    /**** CORE2 specific pins ****/
+    SENS1_PIN1 = PA_2,
+    SENS1_PIN1_ALT0 = PA_2_ALT0,
+    SENS1_PIN1_ALT1 = PA_2_ALT1,
+    // TODO sensors
+    MOT12_SLEEP = PC_13,
+    MOT12_FAULT = PE_0,
+    MOT1_PWM = PF_6,
+    MOT1A_IN = PG_10,
+    MOT1B_IN = PG_11,
+    MOT1A_ENC = PA_0,
+    MOT1B_ENC = PA_1,
+    MOT2_PWM = PF_7,
+    MOT2A_IN = PD_3,
+    MOT2B_IN = PD_4,
+    MOT2A_ENC = PC_6,
+    MOT2B_ENC = PC_7,
+    MOT34_SLEEP = PC_14,
+    MOT34_FAULT = PE_1,
+    MOT3_PWM = PF_8,
+    MOT3A_IN = PC_15,
+    MOT3B_IN = PF_2,
+    MOT3A_ENC = PB_4,
+    MOT3B_ENC = PA_7,
+    MOT4_PWM = PF_9,
+    MOT4A_IN = PE_5,
+    MOT4B_IN = PE_6, 
+    MOT4A_ENC = PB_6,
+    MOT4B_ENC = PB_7,   
+    
     // Not connected
     NC = (int)0xFFFFFFFF
 } PinName;
