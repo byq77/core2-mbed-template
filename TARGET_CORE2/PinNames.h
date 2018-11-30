@@ -353,6 +353,7 @@ typedef enum {
     SENS1_PIN1 = PA_2,
     SENS1_PIN1_ALT0 = PA_2_ALT0,
     SENS1_PIN1_ALT1 = PA_2_ALT1,
+    
     // TODO sensors
     MOT12_SLEEP = PC_13,
     MOT12_FAULT = PE_0,

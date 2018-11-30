@@ -11,7 +11,7 @@
                 "args": [
                     "compile",
                     "--profile",
-                    "release",
+                    "${workspaceFolder}\\TARGET_CORE2\\custom_profiles\\release.json",
                     "-c",
                     "-N",
                     "firmware",
@@ -28,7 +28,7 @@
                 "args": [
                     "compile",
                     "--profile",
-                    "release",
+                    "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
                     "-c",
                     "-N",
                     "firmware",
@@ -68,7 +68,7 @@
                 "args": [
                     "compile",
                     "--profile",
-                    "release",
+                    "${workspaceFolder}\\TARGET_CORE2\\custom_profiles\\release.json",
                     "-N",
                     "firmware",
                     "--source",
@@ -84,7 +84,115 @@
                 "args": [
                     "compile",
                     "--profile",
-                    "release",
+                    "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
+                    "-N",
+                    "firmware",
+                    "--source",
+                    "./../mbed-os",
+                    "--source",
+                    ".",
+                    "--build",
+                    "./BUILD/CORE2-RELEASE",
+                    "--color"
+                ]
+            },
+            "group": "build",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 2,
+                    "line": 3,
+                    "column": 4,
+                    "severity": 5,
+                    "message": 6
+                }
+            }
+        },
+        {
+            "label": "CLEAN BUILD (DEBUG)",
+            "type": "shell",
+            "command": "mbed",
+            "windows": {
+                "args": [
+                    "compile",
+                    "--profile",
+                    "${workspaceFolder}\\TARGET_CORE2\\custom_profiles\\debug.json",
+                    "-N",
+                    "firmware",
+                    "--source",
+                    ".\\..\\mbed-os",
+                    "--source",
+                    ".",
+                    "--build",
+                    ".\\BUILD\\CORE2-DEBUG",
+                    "--color",
+                    "-c"
+                ]
+            },
+            "linux": {
+                "args": [
+                    "compile",
+                    "--profile",
+                    "${workspaceFolder}/TARGET_CORE2/custom_profiles/debug.json",
+                    "-N",
+                    "firmware",
+                    "--source",
+                    "./../mbed-os",
+                    "--source",
+                    ".",
+                    "--build",
+                    "./BUILD/CORE2-DEBUG",
+                    "--color",
+                    "-c"
+                ]
+            },
+            "group": "build",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 2,
+                    "line": 3,
+                    "column": 4,
+                    "severity": 5,
+                    "message": 6
+                }
+            }
+        },
+                {
+            "label": "BUILD (RELEASE)",
+            "type": "shell",
+            "command": "mbed",
+            "windows": {
+                "args": [
+                    "compile",
+                    "--profile",
+                    "${workspaceFolder}\\TARGET_CORE2\\custom_profiles\\release.json",
+                    "-N",
+                    "firmware",
+                    "--source",
+                    ".\\..\\mbed-os",
+                    "--source",
+                    ".",
+                    "--build",
+                    ".\\BUILD\\CORE2-RELEASE",
+                    "--color"
+                ]
+            },
+            "linux": {
+                "args": [
+                    "compile",
+                    "--profile",
+                    "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
                     "-N",
                     "firmware",
                     "--source",
