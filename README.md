@@ -1,6 +1,9 @@
 # core2-mbed-template
 Blinking leds project template for CORE2 for mbed development in Visual Studio Code.
 
+## Important
+This target use C++11 and is available for `GCC_ARM` toolchain only!
+
 ## Prerequisites
 You need following tools:
 * [Visual Studio Code IDE](https://code.visualstudio.com/)
