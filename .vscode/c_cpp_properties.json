@@ -1,6 +1,6 @@
 {
     "env": {
-        "MbedOsPath": "E:/github_repositories/mbed-os",
+        "MbedOsPath": "${workspaceFolder}/../mbed-os",
         "DefaultIncludePath": [
             "${MbedOsPath}",
             "${MbedOsPath}/cmsis",
@@ -252,13 +252,19 @@
             "${MbedOsPath}/components/wifi/esp8266-driver",
             "${MbedOsPath}/components/wifi",
             "${MbedOsPath}/components/wifi/esp8266-driver/ESP8266",
+            "${workspaceFolder}/lib",       
+            "${workspaceFolder}/test",       
+            "${workspaceFolder}/src",       
+            "${workspaceFolder}/TARGET_CORE2" 
+        ],
+        "UserIncludes":
+        [
             "${workspaceFolder}/lib/**",       
             "${workspaceFolder}/test/**",       
             "${workspaceFolder}/src/**",       
             "${workspaceFolder}/TARGET_CORE2/**" 
         ],
         "DefaultDefines": [
-            "PLATFORMIO=30602",
             "STM32F4",
             "STM32F407xx",
             "STM32F40_41xxx",
@@ -314,7 +320,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${DefaultIncludePath}"
+                "${DefaultIncludePath}","${UserIncludes}"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
@@ -328,13 +334,13 @@
             ],
             "intelliSenseMode": "msvc-x64",
             "cStandard": "c99",
-            "cppStandard": "c++98",
-            "compilerPath": "C:/Program Files (x86)/GNU Tools ARM Embedded/6 2017-q2-update/bin/arm-none-eabi-gcc.exe"
+            "cppStandard": "c++11",
+            "compilerPath": "${default}"
         },
         {
             "name": "Linux",
             "includePath": [
-                "${DefaultIncludePath}"
+                "${DefaultIncludePath}","${UserIncludes}"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
@@ -348,8 +354,28 @@
             ],
             "intelliSenseMode": "gcc-x64",
             "cStandard": "c99",
-            "cppStandard": "c++98",
-            "compilerPath": "/usr/bin/"
+            "cppStandard": "c++11",
+            "compilerPath": "${default}"
+        },
+        {
+            "name": "Mac",
+            "includePath": [
+                "${DefaultIncludePath}","${UserIncludes}"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceFolder}/.vscode/.browse.c_cpp.db",
+                "path": [
+                    "${DefaultIncludePath}"
+                ]
+            },
+            "defines": [
+                "${DefaultDefines}"
+            ],
+            "intelliSenseMode": "clang-x64",
+            "cStandard": "c99",
+            "cppStandard": "c++11",
+            "compilerPath": "${default}"
         }
     ],
     "version": 4

@@ -11,12 +11,12 @@
                 "macro_name": "CLOCK_SOURCE"
             }
         },
-        "macros": ["INITIAL_SP=(0x20020000UL)", "ENCODER_1=TIM2", "ENCODER_2=TIM8",
-        "ENCODER_3=TIM3","ENCODER_4=TIM4"],
-        "macros_add": ["USB_STM_HAL"],
+        "bootloader_supported": true,
+        "macros_add": ["USB_STM_HAL","INITIAL_SP=(0x20020000UL)", "ENCODER_1=TIM2", "ENCODER_2=TIM8",
+            "ENCODER_3=TIM3","ENCODER_4=TIM4"],
         "overrides": {"lse_available": 0},
         "device_has_add": ["ANALOGOUT", "TRNG"],
-        "release_versions": ["2", "5"],
+        "release_versions": ["5"],
         "device_name": "STM32F407ZG"
     }
 }

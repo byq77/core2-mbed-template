@@ -7,39 +7,20 @@
             "label": "CLEAN BUILD (RELEASE)",
             "type": "shell",
             "command": "mbed",
-            "windows": {
-                "args": [
-                    "compile",
-                    "--profile",
-                    "${workspaceFolder}\\TARGET_CORE2\\custom_profiles\\release.json",
-                    "-c",
-                    "-N",
-                    "firmware",
-                    "--source",
-                    ".\\..\\mbed-os",
-                    "--source",
-                    ".",
-                    "--build",
-                    ".\\BUILD\\CORE2-RELEASE",
-                    "--color"
-                ]
-            },
-            "linux": {
-                "args": [
-                    "compile",
-                    "--profile",
-                    "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
-                    "-c",
-                    "-N",
-                    "firmware",
-                    "--source",
-                    "./../mbed-os",
-                    "--source",
-                    ".",
-                    "--build",
-                    "./BUILD/CORE2-RELEASE"
-                ]
-            },
+            "args": [
+                "compile",
+                "--profile",
+                "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
+                "-c",
+                "-N",
+                "firmware",
+                "--source",
+                "./../mbed-os",
+                "--source",
+                ".",
+                "--build",
+                "./BUILD/RELEASE"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -64,38 +45,20 @@
             "label": "BUILD (RELEASE)",
             "type": "shell",
             "command": "mbed",
-            "windows": {
-                "args": [
-                    "compile",
-                    "--profile",
-                    "${workspaceFolder}\\TARGET_CORE2\\custom_profiles\\release.json",
-                    "-N",
-                    "firmware",
-                    "--source",
-                    ".\\..\\mbed-os",
-                    "--source",
-                    ".",
-                    "--build",
-                    ".\\BUILD\\CORE2-RELEASE",
-                    "--color"
-                ]
-            },
-            "linux": {
-                "args": [
-                    "compile",
-                    "--profile",
-                    "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
-                    "-N",
-                    "firmware",
-                    "--source",
-                    "./../mbed-os",
-                    "--source",
-                    ".",
-                    "--build",
-                    "./BUILD/CORE2-RELEASE",
-                    "--color"
-                ]
-            },
+            "args": [
+                "compile",
+                "--profile",
+                "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
+                "-c",
+                "-N",
+                "firmware",
+                "--source",
+                "./../mbed-os",
+                "--source",
+                ".",
+                "--build",
+                "./BUILD/RELEASE"
+            ],
             "group": "build",
             "problemMatcher": {
                 "owner": "cpp",
@@ -117,40 +80,20 @@
             "label": "CLEAN BUILD (DEBUG)",
             "type": "shell",
             "command": "mbed",
-            "windows": {
-                "args": [
-                    "compile",
-                    "--profile",
-                    "${workspaceFolder}\\TARGET_CORE2\\custom_profiles\\debug.json",
-                    "-N",
-                    "firmware",
-                    "--source",
-                    ".\\..\\mbed-os",
-                    "--source",
-                    ".",
-                    "--build",
-                    ".\\BUILD\\CORE2-DEBUG",
-                    "--color",
-                    "-c"
-                ]
-            },
-            "linux": {
-                "args": [
-                    "compile",
-                    "--profile",
-                    "${workspaceFolder}/TARGET_CORE2/custom_profiles/debug.json",
-                    "-N",
-                    "firmware",
-                    "--source",
-                    "./../mbed-os",
-                    "--source",
-                    ".",
-                    "--build",
-                    "./BUILD/CORE2-DEBUG",
-                    "--color",
-                    "-c"
-                ]
-            },
+            "args": [
+                "compile",
+                "--profile",
+                "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
+                "-c",
+                "-N",
+                "firmware",
+                "--source",
+                "./../mbed-os",
+                "--source",
+                ".",
+                "--build",
+                "./BUILD/RELEASE"
+            ],
             "group": "build",
             "problemMatcher": {
                 "owner": "cpp",
@@ -168,42 +111,24 @@
                 }
             }
         },
-                {
-            "label": "BUILD (RELEASE)",
+        {
+            "label": "BUILD (DEBUG)",
             "type": "shell",
             "command": "mbed",
-            "windows": {
-                "args": [
-                    "compile",
-                    "--profile",
-                    "${workspaceFolder}\\TARGET_CORE2\\custom_profiles\\release.json",
-                    "-N",
-                    "firmware",
-                    "--source",
-                    ".\\..\\mbed-os",
-                    "--source",
-                    ".",
-                    "--build",
-                    ".\\BUILD\\CORE2-RELEASE",
-                    "--color"
-                ]
-            },
-            "linux": {
-                "args": [
-                    "compile",
-                    "--profile",
-                    "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
-                    "-N",
-                    "firmware",
-                    "--source",
-                    "./../mbed-os",
-                    "--source",
-                    ".",
-                    "--build",
-                    "./BUILD/CORE2-RELEASE",
-                    "--color"
-                ]
-            },
+            "args": [
+                "compile",
+                "--profile",
+                "${workspaceFolder}/TARGET_CORE2/custom_profiles/debug.json",
+                "-c",
+                "-N",
+                "firmware",
+                "--source",
+                "./../mbed-os",
+                "--source",
+                ".",
+                "--build",
+                "./BUILD/DEBUG"
+            ],
             "group": "build",
             "problemMatcher": {
                 "owner": "cpp",
@@ -224,21 +149,34 @@
         {
             "label": "FLASH FIRMWARE (RELEASE)",
             "type": "shell",
+            "command": "st-flash write ./BUILD/RELEASE/firmware_application.bin 0x8010000",
             "windows": {
                 "command": "ST-LINK_CLI",
                 "args": [
                     "-P",
-                    ".\\BUILD\\CORE2-RELEASE\\firmware.bin",
-                    "0x08000000",
+                    ".\\BUILD\\RELEASE\\firmware_application.bin",
+                    "0x08010000",
                     "-V",
                     "\"after_programming\"",
                     "-Rst"
                 ]
             },
-            "osx": {},
-            "linux": {
-                "command": "st-flash write ./BUILD/CORE2-RELEASE/firmware.bin 0x8000000",
-            }
-        }
+        },
+        {
+            "label": "FLASH FIRMWARE (DEBUG)",
+            "type": "shell",
+            "command": "st-flash write ./BUILD/DEBUG/firmware_application.bin 0x8010000",
+            "windows": {
+                "command": "ST-LINK_CLI",
+                "args": [
+                    "-P",
+                    ".\\BUILD\\DEBUG\\firmware_application.bin",
+                    "0x08010000",
+                    "-V",
+                    "\"after_programming\"",
+                    "-Rst"
+                ]
+            },
+        },
     ]
 }
