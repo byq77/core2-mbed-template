@@ -58,26 +58,22 @@ $ mbed config -G MBED_OS_DIR "E:\mbed_projects\core2-mbed-workspace\mbed-os"
 
 Open Visual Studio Code, press `CTRL + SHIFT + P` and type `Git: Clone` in Command Pallet. Copy and paste `https://github.com/byq77/core2-mbed-template.git` URL.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676115-53336680-eb62-11e8-9059-4aeb8d8096b6.png" /></p>
+<p align="center"><img width="800px" src="https://user-images.githubusercontent.com/28567623/48676115-53336680-eb62-11e8-9059-4aeb8d8096b6.png" /></p>
 
-You will be prompted to select your repo location. Choose `core2-mbed-workspace` folder. Open your repo in vs code.
+You will be prompted to select your repo location. Choose `core2-mbed-workspace` folder. Open your repo in vs code. You should see:
 
-### Project configuration
+<p align="center"><img width="800px" src="https://user-images.githubusercontent.com/28567623/49590889-43db5800-f96d-11e8-8d2a-2afed679c03b.png" /></p>
 
-Last step will be to configure your `c_cpp_project.json` file. 
+### Updating project files
 
-Find `MbedOsPath` variable and change its value with path to your local `mbed-os`: 
+Open `settings.json` file from `.vscode` and change value of `C_cpp.default.compilerPath` with path to `arm-none-eabi-gcc` location on your system:
 
-<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676206-d30e0080-eb63-11e8-9030-4f339a5eb634.png" /></p>
-
-If you are a Windows user find variable `compilerPath` and replace its value with path to `arm-none-eabi-gcc.exe` on your system:
-
-<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676215-f89b0a00-eb63-11e8-9fb3-be5cf287dd75.png"></center></p>
+<p align="center"><img width="800px" src="https://user-images.githubusercontent.com/28567623/49591150-f01d3e80-f96d-11e8-9d40-c496c968306a.png" /></p>
 
 ### Adding .mbedignore
 https://os.mbed.com/docs/v5.10/tools/ignoring-files-from-mbed-build.html
 
-To speed-up building your projects you can exclude certain folders of `mbed-os` library from compilation. In your local `mbed-os` library root folder create new file `.mbedignore`. Open it and add following lines:
+In order to add support for CORE2 target and speed-up building of your project you need to exclude certain folders of `mbed-os` library from compilation. In your local `mbed-os` library root folder create new file `.mbedignore`. Open it and add following lines:
 
 ```
 features/cellular/*
@@ -101,11 +97,11 @@ targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F407xG/device/TOOLCHAIN_GCC_ARM/st
 
 To build and flash your firmware press `CTRL + SHIFT + P` and type `Tasks: Run Task` in Command Pallete. Select task of your choice. 
 
-<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676405-cfc84400-eb66-11e8-9120-88a57175c9f7.png" /></p>
+<p align="center"><img width="800px" src="https://user-images.githubusercontent.com/28567623/49592003-45f2e600-f970-11e8-89bb-25a4d7ff28b9.png" /></p>
 
 You can add new tasks and customize existing ones by editing `task.json` file. 
 
-<p align="center"><img src="https://user-images.githubusercontent.com/28567623/48676429-33eb0800-eb67-11e8-9409-4820eaec1691.png" /></p>
+<p align="center"><img width="800px" src="https://user-images.githubusercontent.com/28567623/49592056-6fac0d00-f970-11e8-8a71-51ae7c5e4a04.png" /></p>
 
 
 ## mbed development
