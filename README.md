@@ -11,11 +11,11 @@ You need following tools:
 * [STM32 ST-LINK Utility](https://www.st.com/en/development-tools/stsw-link004.html) (Windows only)
 * [stlink flasher](https://github.com/texane/stlink/blob/master/README.md) (Mac or Linux)
 ## mbed-cli installation
-In-depth tutorial on `mbed-cli` tool installation can be found [here](https://os.mbed.com/docs/v5.10/tools/installation-and-setup.html). 
+In-depth tutorial on Mbed CLI tool installation can be found [here](https://os.mbed.com/docs/v5.10/tools/installation-and-setup.html). 
 
 **Important!**
 
-After installation remember to set the path to the binary directory of your **GCC Arm Embedded Compiler** installation in `mbed-cli` configuration. You can read how to do it under this [link](https://os.mbed.com/docs/v5.10/tools/configuring-mbed-cli.html#through-mbed-cli-configuration). You will also find all necessary information about this tool there.
+After installation Mbed CLI needs to know the path to the binary directory of your **GCC Arm Embedded Compiler** installation. You can read how to do it under this [link](https://os.mbed.com/docs/v5.10/tools/configuring-mbed-cli.html#through-mbed-cli-configuration). You will also find all necessary information about this tool there.
 
 Example for Windows:
 ```bash
@@ -39,7 +39,7 @@ $ mbed import mbed-os
 [mbed] Importing program "mbed-os" from "https://github.com/ARMmbed/mbed-os" at latest revision in the current branch
 ```
 
-After that you will need to set path to your newly imported `mbed-os` library as global in mbed cli tool. These way all your projects can use one instance of library (default configuration is to have separate instance of library for each project). Run:
+After that you will need to set path to `mbed-os` directory in Mbed CLI. These way all your projects can use one instance of library (default configuration is to have separate instance of library for each project). Run:
 
 ```bash
 $ mbed config -G MBED_OS_DIR <path to mbed-os>
@@ -85,6 +85,7 @@ features/lwipstack/*
 features/nanostack/*
 features/netsocket/*
 features/nfc/*
+features/storage/*
 features/unsupported/*
 components/wifi/*
 components/802.15.4_RF/*

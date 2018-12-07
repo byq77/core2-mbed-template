@@ -13,7 +13,7 @@
         },
         "bootloader_supported": true,
         "macros_add": ["USB_STM_HAL","INITIAL_SP=(0x20020000UL)", "ENCODER_1=TIM2", "ENCODER_2=TIM8",
-            "ENCODER_3=TIM3","ENCODER_4=TIM4"],
+            "ENCODER_3=TIM3","ENCODER_4=TIM4", "MBED_MPU_CUSTOM"],
         "overrides": {"lse_available": 0},
         "device_has_add": ["ANALOGOUT", "TRNG"],
         "release_versions": ["5"],
