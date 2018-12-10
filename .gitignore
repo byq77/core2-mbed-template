@@ -2,3 +2,4 @@ BUILD/RELEASE
 BUILD/DEBUG
 BUILD/DEVELOP
 .vscode/.B*
+mbed_settings.py
