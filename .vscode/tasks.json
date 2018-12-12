@@ -15,11 +15,11 @@
                 "-N",
                 "firmware",
                 "--source",
-                "./../mbed-os",
+                "${workspaceFolder}/../mbed-os",
                 "--source",
-                ".",
+                "${workspaceFolder}",
                 "--build",
-                "./BUILD/RELEASE"
+                "${workspaceFolder}/BUILD/RELEASE"
             ],
             "group": {
                 "kind": "build",
@@ -52,11 +52,11 @@
                 "-N",
                 "firmware",
                 "--source",
-                "./../mbed-os",
+                "${workspaceFolder}/../mbed-os",
                 "--source",
-                ".",
+                "${workspaceFolder}",
                 "--build",
-                "./BUILD/RELEASE"
+                "${workspaceFolder}/BUILD/RELEASE"
             ],
             "group": "build",
             "problemMatcher": {
@@ -87,11 +87,11 @@
                 "-N",
                 "firmware",
                 "--source",
-                "./../mbed-os",
+                "${workspaceFolder}/../mbed-os",
                 "--source",
-                ".",
+                "${workspaceFolder}",
                 "--build",
-                "./BUILD/RELEASE"
+                "${workspaceFolder}/BUILD/RELEASE"
             ],
             "group": "build",
             "problemMatcher": {
@@ -121,11 +121,11 @@
                 "-N",
                 "firmware",
                 "--source",
-                "./../mbed-os",
+                "${workspaceFolder}/../mbed-os",
                 "--source",
-                ".",
+                "${workspaceFolder}",
                 "--build",
-                "./BUILD/DEBUG"
+                "${workspaceFolder}/BUILD/DEBUG"
             ],
             "group": "build",
             "problemMatcher": {
@@ -152,7 +152,7 @@
                 "command": "ST-LINK_CLI",
                 "args": [
                     "-P",
-                    ".\\BUILD\\RELEASE\\firmware_application.bin",
+                    "${workspaceFolder}\\BUILD\\RELEASE\\firmware_application.bin",
                     "0x08010000",
                     "-V",
                     "\"after_programming\"",
@@ -168,7 +168,7 @@
                 "command": "ST-LINK_CLI",
                 "args": [
                     "-P",
-                    ".\\BUILD\\DEBUG\\firmware_application.bin",
+                    "${workspaceFolder}\\BUILD\\DEBUG\\firmware_application.bin",
                     "0x08010000",
                     "-V",
                     "\"after_programming\"",
