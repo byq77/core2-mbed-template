@@ -1,5 +1,8 @@
 # core2-mbed-template
-Blinking leds project template for CORE2 for mbed development in Visual Studio Code.
+Blinking leds project template for [Husarion CORE2 board](https://husarion.com/manuals/core2/) equipped with STMF407ZG MCU. 
+Project is preapared for development in Visual Studio Code with no additional extensions except Mbed CLI tools.
+
+<p align="center"><img width="800px" src="https://cdn.shopify.com/s/files/1/2545/8446/products/CORE2-ROS_1024x1024@2x.png?v=1520001976" alt="CORE2-ROS"/></p>
 
 ## Important
 This target use C++11 and is available for `GCC_ARM` toolchain only!
