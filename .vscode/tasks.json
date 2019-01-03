@@ -9,9 +9,51 @@
             "command": "mbed",
             "args": [
                 "compile",
+                "-m",
+                "CORE2",
+                "-t",
+                "GCC_ARM",
                 "--profile",
                 "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
                 "-c",
+                "-N",
+                "firmware",
+                "--source",
+                "./../mbed-os",
+                "--source",
+                ".",
+                "--build",
+                "./BUILD/RELEASE"
+            ],
+            "group": "build",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 2,
+                    "line": 3,
+                    "column": 4,
+                    "severity": 5,
+                    "message": 6
+                }
+            }
+        },
+        {
+            "label": "BUILD (RELEASE)",
+            "type": "shell",
+            "command": "mbed",
+            "args": [
+                "compile",
+                "-m",
+                "CORE2",
+                "-t",
+                "GCC_ARM",
+                "--profile",
+                "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
                 "-N",
                 "firmware",
                 "--source",
@@ -42,45 +84,15 @@
             }
         },
         {
-            "label": "BUILD (RELEASE)",
-            "type": "shell",
-            "command": "mbed",
-            "args": [
-                "compile",
-                "--profile",
-                "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
-                "-N",
-                "firmware",
-                "--source",
-                "./../mbed-os",
-                "--source",
-                ".",
-                "--build",
-                "./BUILD/RELEASE"
-            ],
-            "group": "build",
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}"
-                ],
-                "pattern": {
-                    "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 2,
-                    "line": 3,
-                    "column": 4,
-                    "severity": 5,
-                    "message": 6
-                }
-            }
-        },
-        {
             "label": "CLEAN BUILD (DEBUG)",
             "type": "shell",
             "command": "mbed",
             "args": [
                 "compile",
+                "-m",
+                "CORE2",
+                "-t",
+                "GCC_ARM",
                 "--profile",
                 "${workspaceFolder}/TARGET_CORE2/custom_profiles/release.json",
                 "-c",
@@ -116,6 +128,10 @@
             "command": "mbed",
             "args": [
                 "compile",
+                "-m",
+                "CORE2",
+                "-t",
+                "GCC_ARM",
                 "--profile",
                 "${workspaceFolder}/TARGET_CORE2/custom_profiles/debug.json",
                 "-N",
@@ -176,5 +192,10 @@
                 ]
             },
         },
+        {
+            "label": "CLEAN",
+            "type": "shell",
+            "command": "rm -rf ${workspaceFolder}/BUILD/RELEASE/* ${workspaceFolder}/BUILD/DEBUG/*"
+        }
     ]
 }
