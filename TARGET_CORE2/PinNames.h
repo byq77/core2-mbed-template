@@ -412,8 +412,8 @@ typedef enum {
     EXT_PIN10 = PC_3, // MOSI SPI
     EXT_PIN10_ALT0 = PC_3_ALT0,
     EXT_PIN10_ATL1 = PC_3_ALT1,
-    EXT_PIN11 = PF_1, // SDA I2C
-    EXT_PIN12 = PF_0, // SCL I2C
+    EXT_PIN11 = PF_0, // SDA I2C
+    EXT_PIN12 = PF_1, // SCL I2C
 
     /**** RPI PORT PINS ****/
     RPI_SERIAL_TX = PA_9,
