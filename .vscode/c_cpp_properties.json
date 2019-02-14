@@ -252,17 +252,14 @@
             "${MbedOsPath}/components/wifi/esp8266-driver",
             "${MbedOsPath}/components/wifi",
             "${MbedOsPath}/components/wifi/esp8266-driver/ESP8266",
-            "${workspaceFolder}/lib",       
-            "${workspaceFolder}/test",       
-            "${workspaceFolder}/src",       
-            "${workspaceFolder}/TARGET_CORE2" 
+            "${workspaceFolder}"       
         ],
         "UserIncludes":
         [
+            "${workspaceFolder}/TARGET_CORE2", 
             "${workspaceFolder}/lib/**",       
             "${workspaceFolder}/test/**",       
-            "${workspaceFolder}/src/**",       
-            "${workspaceFolder}/TARGET_CORE2/**" 
+            "${workspaceFolder}/src/**"       
         ],
         "DefaultDefines": [
             "STM32F4",
@@ -328,6 +325,9 @@
                     "${DefaultIncludePath}"
                 ]
             },
+            "forcedInclude": [
+                "${workspaceFolder}/BUILD/RELEASE/mbed_config.h"
+            ],
             "defines": [
                 "${DefaultDefines}"
             ],

@@ -26,10 +26,7 @@
             "group": "build",
             "problemMatcher": {
                 "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}"
-                ],
+                "fileLocation": "absolute",
                 "pattern": {
                     "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
                     "file": 2,
@@ -67,10 +64,7 @@
             },
             "problemMatcher": {
                 "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}"
-                ],
+                "fileLocation": "absolute",
                 "pattern": {
                     "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
                     "file": 2,
@@ -106,10 +100,7 @@
             "group": "build",
             "problemMatcher": {
                 "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}"
-                ],
+                "fileLocation": "absolute",
                 "pattern": {
                     "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
                     "file": 2,
@@ -144,10 +135,7 @@
             "group": "build",
             "problemMatcher": {
                 "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}"
-                ],
+                "fileLocation": "absolute",
                 "pattern": {
                     "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
                     "file": 2,
