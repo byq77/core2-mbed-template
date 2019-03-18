@@ -2,42 +2,6 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "CLEAN BUILD (RELEASE)",
-            "type": "shell",
-            "command": "mbed",
-            "args": [
-                "compile",
-                "-m",
-                "CORE2",
-                "-t",
-                "GCC_ARM",
-                "--profile",
-                "release",
-                "-c",
-                "-N",
-                "firmware",
-                "--source",
-                "${workspaceFolder}/../mbed-os",
-                "--source",
-                "${workspaceFolder}",
-                "--build",
-                "${workspaceFolder}/BUILD/RELEASE"
-            ],
-            "group": "build",
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": "absolute",
-                "pattern": {
-                    "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 2,
-                    "line": 3,
-                    "column": 4,
-                    "severity": 5,
-                    "message": 6
-                }
-            }
-        },
-        {
             "label": "BUILD (RELEASE)",
             "type": "shell",
             "command": "mbed",
@@ -62,42 +26,6 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": "absolute",
-                "pattern": {
-                    "regexp": "^(\\[ERROR\\])*\\s*(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 2,
-                    "line": 3,
-                    "column": 4,
-                    "severity": 5,
-                    "message": 6
-                }
-            }
-        },
-        {
-            "label": "CLEAN BUILD (DEBUG)",
-            "type": "shell",
-            "command": "mbed",
-            "args": [
-                "compile",
-                "-m",
-                "CORE2",
-                "-t",
-                "GCC_ARM",
-                "--profile",
-                "debug",
-                "-c",
-                "-N",
-                "firmware",
-                "--source",
-                "${workspaceFolder}/../mbed-os",
-                "--source",
-                "${workspaceFolder}",
-                "--build",
-                "${workspaceFolder}/BUILD/DEBUG"
-            ],
-            "group": "build",
             "problemMatcher": {
                 "owner": "cpp",
                 "fileLocation": "absolute",
@@ -149,13 +77,13 @@
         {
             "label": "FLASH FIRMWARE (RELEASE)",
             "type": "shell",
-            "command": "st-flash write ./BUILD/RELEASE/firmware_application.bin 0x8010000",
+            "command": "st-flash write ${workspaceFolder}/BUILD/RELEASE/firmware.bin 0x8000000",
             "windows": {
                 "command": "ST-LINK_CLI",
                 "args": [
                     "-P",
-                    "${workspaceFolder}\\BUILD\\RELEASE\\firmware_application.bin",
-                    "0x08010000",
+                    "${workspaceFolder}\\BUILD\\RELEASE\\firmware.bin",
+                    "0x08000000",
                     "-V",
                     "\"after_programming\"",
                     "-Rst"
@@ -165,13 +93,13 @@
         {
             "label": "FLASH FIRMWARE (DEBUG)",
             "type": "shell",
-            "command": "st-flash write ./BUILD/DEBUG/firmware_application.bin 0x8010000",
+            "command": "st-flash write ${workspaceFolder}/BUILD/DEBUG/firmware.bin 0x8000000",
             "windows": {
                 "command": "ST-LINK_CLI",
                 "args": [
                     "-P",
                     "${workspaceFolder}\\BUILD\\DEBUG\\firmware_application.bin",
-                    "0x08010000",
+                    "0x08000000",
                     "-V",
                     "\"after_programming\"",
                     "-Rst"
@@ -179,9 +107,14 @@
             },
         },
         {
-            "label": "CLEAN",
+            "label": "CLEAN DEBUG",
             "type": "shell",
-            "command": "rm -rf ${workspaceFolder}/BUILD/RELEASE/* ${workspaceFolder}/BUILD/DEBUG/*"
+            "command": "rm -rf ${workspaceFolder}/BUILD/DEBUG"
+        },
+        {
+            "label": "CLEAN RELEASE",
+            "type": "shell",
+            "command": "rm -rf ${workspaceFolder}/BUILD/RELEASE"
         }
     ]
 }

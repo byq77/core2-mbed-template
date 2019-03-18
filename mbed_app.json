@@ -9,8 +9,7 @@
         "CORE2": {
             "events.shared-dispatch-from-application": 0,
             "platform.default-serial-baud-rate": 115200,
-            "platform.stdio-baud-rate": 115200,
-            "target.mbed_app_start": "0x08010000"
+            "platform.stdio-baud-rate": 115200
         }
     }
 }
