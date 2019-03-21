@@ -332,7 +332,8 @@
                 ]
             },
             "forcedInclude": [
-                "${workspaceFolder}/BUILD/RELEASE/mbed_config.h"
+                "${workspaceFolder}/BUILD/RELEASE/mbed_config.h",
+                "${workspaceFolder}/BUILD/mbed-os-release/mbed_config.h"
             ],
             "defines": [
                 "${DefaultDefines}"
@@ -357,7 +358,8 @@
                 "${DefaultDefines}"
             ],
             "forcedInclude": [
-                "${workspaceFolder}/BUILD/RELEASE/mbed_config.h"
+                "${workspaceFolder}/BUILD/RELEASE/mbed_config.h",
+                "${workspaceFolder}/BUILD/mbed-os-release/mbed_config.h"
             ],
             "intelliSenseMode": "gcc-x64",
             "cStandard": "c99",
@@ -383,7 +385,8 @@
                 "${DefaultDefines}"
             ],
             "forcedInclude": [
-                "${workspaceFolder}/BUILD/RELEASE/mbed_config.h"
+                "${workspaceFolder}/BUILD/RELEASE/mbed_config.h",
+                "${workspaceFolder}/BUILD/mbed-os-release/mbed_config.h"
             ],
             "intelliSenseMode": "clang-x64",
             "cStandard": "c99",

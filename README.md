@@ -1,6 +1,6 @@
 # core2-mbed-template
-Blinking leds project template for [Husarion CORE2 board](https://husarion.com/manuals/core2/) equipped with STMF407ZG MCU. 
-Project is preapared for development in Visual Studio Code with no additional extensions except Mbed CLI tools.
+Blinking leds project template for [Husarion CORE2](https://husarion.com/manuals/core2/), a board equipped with STM32 Cortex-M4 MCU. 
+Project is prepared for development in Visual Studio Code with Mbed CLI tools.
 
 <p align="center"><img width="800px" src="https://cdn.shopify.com/s/files/1/2545/8446/products/CORE2-ROS_1024x1024@2x.png?v=1520001976" alt="CORE2-ROS"/></p>
 
@@ -69,10 +69,13 @@ You will be prompted to select your repo location. Choose `core2-mbed-workspace`
 
 ### Updating project files
 
-Open `settings.json` file from `.vscode` and change value of `C_cpp.default.compilerPath` with path to `arm-none-eabi-gcc` location on your system:
+Open `settings.json` file from `.vscode` and change value of `C_cpp.default.compilerPath` with path to `arm-none-eabi-g++` location on your system:
 
-<p align="center"><img width="800px" src="https://user-images.githubusercontent.com/28567623/49591150-f01d3e80-f96d-11e8-9d40-c496c968306a.png" /></p>
-
+```json
+{
+    "C_Cpp.default.compilerPath": "C:/Program Files (x86)/GNU Tools ARM Embedded/6 2017-q2-update/bin/arm-none-eabi-g++"
+}
+```
 ### Adding .mbedignore
 https://os.mbed.com/docs/v5.10/tools/ignoring-files-from-mbed-build.html
 
@@ -82,30 +85,33 @@ In order to add support for CORE2 target and speed-up building of your project y
 features/cellular/*
 features/cryptocell/*
 features/deprecated_warnings/*
-features/device_key/*
 features/lorawan/*
 features/lwipstack/*
 features/nanostack/*
 features/netsocket/*
 features/nfc/*
-features/storage/*
 features/unsupported/*
 components/wifi/*
 components/802.15.4_RF/*
-components/storage/*
 targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F407xG/device/TOOLCHAIN_GCC_ARM/STM32F407XG.ld
 targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F407xG/device/TOOLCHAIN_GCC_ARM/startup_stm32f407xx.S
 ```
 
 ### Compilation tasks
 
-To build and flash your firmware press `CTRL + SHIFT + P` and type `Tasks: Run Task` in Command Pallete. Select task of your choice. 
-
-<p align="center"><img width="800px" src="https://user-images.githubusercontent.com/28567623/49592003-45f2e600-f970-11e8-89bb-25a4d7ff28b9.png" /></p>
+To build and flash your firmware press `CTRL + SHIFT + P` and type `Tasks: Run Task` in Command Pallete. Here is the list of available tasks: 
+* `BUILD (RELEASE)`
+* `BUILD (DEBUG)`
+* `FLASH FIRMWARE (RELEASE)`
+* `FLASH FIRMWARE (DEBUG)`
+* `CREATE STATIC MBED-OS LIB (RELEASE)`
+* `CREATE STATIC MBED-OS LIB (DEBUG)`
+* `BUILD FROM STATIC LIB (RELEASE)`
+* `BUILD FROM STATIC LIB (DEBUG)`
+* `CLEAN DEBUG`
+* `CLEAN RELEASE`
 
 You can add new tasks and customize existing ones by editing `task.json` file. 
-
-<p align="center"><img width="800px" src="https://user-images.githubusercontent.com/28567623/49592056-6fac0d00-f970-11e8-8a71-51ae7c5e4a04.png" /></p>
 
 ### Debug
 
