@@ -98,7 +98,7 @@
                 "command": "ST-LINK_CLI",
                 "args": [
                     "-P",
-                    "${workspaceFolder}\\BUILD\\DEBUG\\firmware_application.bin",
+                    "${workspaceFolder}\\BUILD\\DEBUG\\firmware.bin",
                     "0x08000000",
                     "-V",
                     "\"after_programming\"",
