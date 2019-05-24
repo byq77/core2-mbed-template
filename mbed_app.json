@@ -9,8 +9,11 @@
     "target_overrides": {
         "CORE2": {
             "events.shared-dispatch-from-application": 0,
-            "platform.default-serial-baud-rate": 115200,
-            "platform.stdio-baud-rate": 115200
+            "events.shared-eventsize": 512,
+            "events.shared-stacksize": 2048,
+            "platform.default-serial-baud-rate": 230400,
+            "platform.stdio-baud-rate": 230400,
+            "platform.all-stats-enabled": false
         }
     }
 }

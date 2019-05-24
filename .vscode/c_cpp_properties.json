@@ -261,7 +261,8 @@
             "${workspaceFolder}/TARGET_CORE2", 
             "${workspaceFolder}/lib/**",       
             "${workspaceFolder}/test/**",       
-            "${workspaceFolder}/src/**"       
+            "${workspaceFolder}/src/**",       
+            "${workspaceFolder}/include/**"       
         ],
         "DefaultDefines": [
             "TARGET_DEBUG",
