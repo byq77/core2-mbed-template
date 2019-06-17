@@ -1,6 +1,8 @@
 #include <mbed.h>
 
-static const uint8_t led_mask[] = { 0x01, 0x02, 0x04, 0x02 };
+static const uint8_t led_mask[] = {
+0,0b00000001,0b00000010,0b00000100,0b00000010,
+0b00000001,0,0b00000111,0b00000101,0b00000010};
 BusOut leds(LED1,LED2,LED3);
 
 int main()
