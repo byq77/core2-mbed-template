@@ -112,16 +112,18 @@ Example (Windows):
 To build and flash your firmware press `CTRL + SHIFT + P` and type `Tasks: Run Task` in Command Pallete. Here is the list of available tasks: 
 * `BUILD (RELEASE)`
 * `BUILD (DEBUG)`
-* `FLASH FIRMWARE WHEN BOOTLOADER (RELEASE)`
-* `FLASH FIRMWARE WHEN BOOTLOADER (DEBUG)`
-* `FLASH FIRMWARE NO BOOTLOADER (RELEASE)`
-* `FLASH FIRMWARE NO BOOTLOADER (DEBUG)`
+* `FLASH FIRMWARE WHEN BOOTLOADER (RELEASE)`*
+* `FLASH FIRMWARE WHEN BOOTLOADER (DEBUG)`  *
+* `FLASH FIRMWARE NO BOOTLOADER (RELEASE)`  *
+* `FLASH FIRMWARE NO BOOTLOADER (DEBUG)`    *
 * `CREATE STATIC MBED-OS LIB (RELEASE)`
 * `CREATE STATIC MBED-OS LIB (DEBUG)`
 * `BUILD FROM STATIC LIB (RELEASE)`
 * `BUILD FROM STATIC LIB (DEBUG)`
 * `CLEAN DEBUG`
 * `CLEAN RELEASE`
+
+`*` *require ST-LINK programmer*
 
 You can add new tasks and customize existing ones by editing `task.json` file. 
 
@@ -134,7 +136,7 @@ To build firmware use `BUILD (RELEASE)` or `BUILD (DEBUG)` tasks.
 To flash firmware connect ST-LINK to debug connector of CORE2 and use `FLASH FIRMWARE WHEN BOOTLOADER (RELEASE)` or `FLASH FIRMWARE WHEN BOOTLOADER (DEBUG)` task.
 
 #### Building and uploading firmware (NO BOOTLOADER)
-> Before proceeding with the following steps make sure you conducted mass erase of the memory and made all flash memory sectors unprotected.
+> Before proceeding with the following steps make sure you conducted mass erase of the memory and made all flash memory sectors are write unprotected.
 
 If you do not want use the bootloader just remove this lines from mbed_app.json:
 ```json
@@ -150,8 +152,8 @@ To flash firmware connect ST-LINK to debug connector of CORE2 and use `FLASH FIR
 #### Flashing firmware using `core2-flasher`
 
 ```bash
-arm-none-eabi-objcopy -O ihex firmware.elf firmware.hex 
-./core2-flasher firmware.hex
+$ arm-none-eabi-objcopy -O ihex firmware.elf firmware.hex 
+$ ./core2-flasher firmware.hex
 ```
 
 You will find `firmware.elf` in `./BUILD/RELEASE` or `./BUILD/DEBUG`.
@@ -160,8 +162,20 @@ Here you can learn where to find `core2-flasher` for your system:
 https://husarion.com/manuals/core2/#updating-core2-bootloader
 
 #### Flashing firmware using `stm32loader`
+https://github.com/byq77/stm32loader
 
-//TODO
+This tool allows you to upload firmware using RPi connector.
+
+If you have the bootloader the first two sectors are write protected. Before uploading new firmware you must unlock them (this will erase the bootloader):
+
+```bash
+$ sudo stm32loader -c <your_sbc> -u -W
+```
+
+To upload new firmware run:
+```bash
+$ sudo stm32loader -c <your_sbc> -e -v -w firmware.bin
+```
 
 ### Debug
 
